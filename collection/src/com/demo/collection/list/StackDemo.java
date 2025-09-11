@@ -1,0 +1,42 @@
+package com.demo.collection.list;
+
+import java.util.List;
+import java.util.Stack;
+
+public class StackDemo {
+
+	public static void main(String[] args) {
+		
+		Stack s = new Stack();
+		
+		s.push("Sanket");
+		s.push("Aniket");
+		s.push("Amit");
+		s.push(1900);
+		s.push(1900);
+		s.push(100.01);
+		
+	
+		
+		System.out.println(s);
+		
+		//s.pop();
+		System.out.println( s.pop());//100.01 removed
+		System.out.println(s);
+		System.out.println(s.pop());//1900 removed
+		System.out.println(s);
+		System.out.println (s.peek());
+		System.out.println(s.search("Aniket"));
+		System.out.println(s.search("Sanket"));
+		System.out.println(s.search("Akshay"));// -1 as there no Akshay present in stack
+		
+		
+
+	}
+	public void adddMethod() {
+		
+		
+	}
+	public void main() {}
+	
+}

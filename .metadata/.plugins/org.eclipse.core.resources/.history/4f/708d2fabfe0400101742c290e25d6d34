@@ -1,0 +1,52 @@
+package com.example.demo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.cache.Cache;
+import com.example.demo.entity.TrainData;
+import com.example.demo.exception.TrainServiceException;
+import com.example.demo.repository.TrainRepository;
+
+@Service
+public class TrainServiceImpl implements TrainService{
+
+	@Autowired
+	TrainRepository repository;
+	
+	@Autowired
+	Cache cache;
+	
+	@Override
+	public void addTrain(TrainData train) {
+		
+		if(train.getId() < 1000) {
+			throw new TrainServiceException("Invalid train id"); // this exception will go in contoller class where we need to handle in controller
+		}
+	
+		repository.save(train);
+		
+	}
+
+	@Override
+	public void deleteTrain(int id) {
+		// TODO Auto-generated method stub
+		repository.deleteById(id);
+	}
+
+	@Override
+	public TrainData getTrain(int id) {
+	
+			return cache.getTrainData(id);
+	
+	}
+
+	@Override
+	public List<TrainData> getAllTrains() {
+		// TODO Auto-generated method stub
+		return repository.findAll();
+	}
+	
+}
