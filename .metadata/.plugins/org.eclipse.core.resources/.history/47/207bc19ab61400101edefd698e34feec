@@ -1,0 +1,7 @@
+package com.example.demo.exception;
+
+public class AppConstants {
+
+	public static final String TICKET_NOT_FOUND = "Ticket not found with ID: ";
+	publid static final String PASSENGER_NOT_FOUND = "Passenger not found ID: ";
+}

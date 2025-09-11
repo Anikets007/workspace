@@ -1,0 +1,29 @@
+# Application name for the API Gateway
+spring.application.name=api-gateway
+
+# Port on which the API Gateway runs
+#server.port=8080
+
+# Eureka client configuration for service discovery
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+eureka.instance.prefer-ip-address=true
+
+# ----- Route for Student Service -----
+# Define a route with the id "student-service"
+spring.cloud.gateway.routes[0].id=student-service
+# Use load balancing (lb://) to call STUDENT-SERVICE registered in Eureka
+spring.cloud.gateway.routes[0].uri=lb://STUDENT-SERVICE
+# Use a route predicate to match all requests starting with /student/
+spring.cloud.gateway.routes[0].predicates[0]=Path=/student/**
+# Optionally, rewrite the path to remove the /student prefix when forwarding
+spring.cloud.gateway.routes[0].filters[0]=RewritePath=/student/(?<segment>.*), /${segment}
+
+# ----- Route for Address Service -----
+# Define a route with the id "address-service"
+spring.cloud.gateway.routes[1].id=address-service
+# Use load balancing to call ADDRESS-SERVICE registered in Eureka
+spring.cloud.gateway.routes[1].uri=lb://ADDRESS-SERVICE
+# Match all requests starting with /address/
+spring.cloud.gateway.routes[1].predicates[0]=Path=/address/**
+# Optionally, rewrite the path to remove the /address prefix when forwarding
+spring.cloud.gateway.routes[1].filters[0]=RewritePath=/address/(?<segment>.*), /${segment}

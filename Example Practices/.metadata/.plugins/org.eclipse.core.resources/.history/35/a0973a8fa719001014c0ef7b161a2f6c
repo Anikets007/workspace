@@ -1,0 +1,25 @@
+package com.example.practice;
+
+public class ReverseNumber{
+	
+	public static int reversedNumber(int number) {
+		int reversed = 0;
+		
+		while(number!=0) {
+			
+			int lastDigit = number % 10;
+			
+			reversed = reversed + lastDigit;
+			
+			number = number/10;
+		}
+		return reversed;
+	}
+	
+	public static void main(String[] args) {
+		int input = 7653434;
+		int result = reversedNumber(input);
+		
+		System.out.println("Reversed Number: "+result);
+	}
+}

@@ -1,0 +1,12 @@
+package com.example.demo.serviceFeignClient;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.demo.entity.Address;
+
+public interface StudentAddressClient {
+	
+	@GetMapping("/address")
+	public Address callAddressApi();
+
+}
