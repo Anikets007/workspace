@@ -1,0 +1,63 @@
+9<!---->
+<!Doctype html>
+<html>
+<head>
+<script>
+    function myFunction(){
+        document.getElementById('para').innerHTML="Paragrapgh chnaged.";
+    }
+
+    document.body.style.background="lightblue";
+</script>
+</head>
+<body>
+    <div>
+        <h2>This is Javascript</h2>
+        <button type="button" onclick="document.getElementById('demo').innerHTML=Date()">Click here for date and
+            time</button>
+        <p id="demo"></p>
+    </div>
+    <div>
+        <h2 id="hello">Java Script can change HTML comtent</h2>
+        <button type="button" onclick="document.getElementById('hello').innerHTML='Hello Javascript!'">Click Me</button>
+    </div>
+    <div>
+        <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn On the bulb</button>
+        <img id="myImage" src="pic_bulboff.gif" style="width: 100px;">
+
+        <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn On the bulb</button>
+    </div>
+    <div>
+        <h2>Javascript in head</h2>
+        <p id="para">This is a paragraph</p>
+        <button type="button" onclick="myFunction()">Try IT</button>
+    </div>
+    <div>
+        <h2>Javacript in body</h2>
+        <p id="para1">This is paragraph</p>
+        <button type="button" onclick="myFunction1()">Click IT</button>
+
+        <script>
+            function myFunction1(){
+                document.getElementById('para1').innerHTML="paragraph changed.";
+            }
+        </script>
+    </div>
+   
+        <h2>Java Script Functions </h2>
+        <p> Call a function to compute the product of p1 and p2 and return the result</p>
+
+        <p id="product"></p>
+
+        <script>
+            function myFuntion2(p1, p2){
+                return p1*p2;
+            }
+            let result=myFunction2(3, 5);
+            document.getElementById("product").innerHTML = "The result is: "+result;
+       </script>
+</body>
+
+
+
+</html>
