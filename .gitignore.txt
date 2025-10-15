@@ -1,0 +1,15 @@
+# Ignore Eclipse workspace junk
+.metadata/
+.settings/
+.classpath
+.project
+
+# Ignore personal notes (optional)
+#notes/
+
+# Ignore build folders (common for all projects)
+bin/
+target/
+
+# Ignore logs
+*.log
