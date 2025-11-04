@@ -37,7 +37,7 @@ public class ArraySorting {
 		return array;
 	}
 
-//	2. Selecttion Sort
+//	2. Selection Sort
 	private static int[] selectionSort(int[] arrays) {
 
 		for (int i = 0; i < arrays.length; i++) { // Outer loop for no of passes
