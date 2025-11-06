@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-public class PDFService extends AbstractDocumentService {
+public class WordService extends AbstractDocumentService {
 
 //	@Override
 //	public String printDocument() {
@@ -10,13 +10,12 @@ public class PDFService extends AbstractDocumentService {
 //	}
 	@Override
 	public void processData() {
-		System.out.println("Processing the data for PDF");
+		System.out.println("Processing the data for Word");
 	}
 
 	@Override
 	public String printData() {
-		return "PDF Printed";
+		return "Word printed";
 	}
 
-	
 }
